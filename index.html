@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=C, initial-scale=1.0">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css"/>
-    <title>Card War</title>
+    <title>TUG OF WAR- RELOAD!</title>
 </head>
 <body>
-    <div class="computer-deck deck">26</div>
-    <div class="computer-card-slot card-slot"></div>
-    <div class="text"></div>
-    <div class="player-deck deck">26</div>
-    <div class="player-card-slot card-slot"></div>
+    <div id="container" class="hide">
+        <label class="label">TUG OF WAR - RELOAD!</label>
+        <div id="hidden">
+        <embed src="./Music/the-epic-trailer-12955.mp3" loop="true" autostart="true"/>
+        </div>
+        <button class="enter">Start War</button>
+    </div>
+
+    <div class="computer-deck deck show">
+           <div class="computer-card-slot card-slot">
+               <div id="output">
+                   <button class="player">TUG</button>
+                       <div class="player-card-slot card-slot"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./Game.js"></script>
     <script src="./deck.js"></script>

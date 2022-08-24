@@ -21,19 +21,58 @@ class Game {
     }
 
     flip () {
-        this.playerHand = this.playerDeck[0]
-        this.cpuHand = this.cpuDeck[0]
+        this.playerHand = this.playerDeck.shift()
+        this.cpuHand = this.cpuDeck.shift()
 
-        if (this.playerHand.charAt(0) > this.cpuHand.charAt(0)) {
-            this.playerDeck.push(this.cpuHand)
-            this.cpuDeck.shift()
-        } else if (this.cpuHand.charAt(0) > this.playerHand.charAt(0)) {
-            this.cpuDeck.push(this.playerHand)
-            this.playerDeck.shift()
-        } else if (this.cpuHand.charAt(0) == this.playerHand.charAt(0)) {
+            console.log("cpu", this.cpuHand)
+            console.log("player", this.playerHand)
+        
+        
+        //fazer a excessao do A aqui
+
+
+        //cartas iguais 
+        if (this.cpuHand.charAt(0) == this.playerHand.charAt(0)) {
+            console.log("cartas iguais")
             this.monte.push(this.cpuHand, this.playerHand)  
+            this.cpuHand = []
+            this.playerHand = []
+
+            return
         }
+
+        // carta cpu maior 
+        if (this.cpuHand.charAt(0) > this.playerHand.charAt(0)) {
+            console.log("cpu ganhou")
+
+            this.cpuDeck.push(this.playerHand, this.cpuHand)
+            
+
+            if(this.monte.length) {
+                this.cpuDeck.push(...this.monte)
+                this.monte = []
+            }
+
+            this.cpuHand = []
+            this.playerHand = []
+
+            return
+        } 
+        // carta player maior
+        if (this.cpuHand.charAt(0) < this.playerHand.charAt(0)) {
+            console.log("player ganhou")
+
+            this.playerDeck.push(this.cpuHand, this.playerHand)
+         
+            if(this.monte.length) {
+                this.playerDeck.push(...this.monte)
+                this.monte = []
+            }
+            this.cpuHand = []
+            this.playerHand = []
+            return
     }
 
-    // o player que ganhar deve pegar o valor de this.monte || 
+
+    }
 }
