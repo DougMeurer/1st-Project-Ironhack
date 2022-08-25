@@ -1,11 +1,12 @@
 class Game {
-    constructor() {
+    constructor(name) {
         this.deck = ["A♣","2♣","3♣","4♣","5♣","6♣","7♣","8♣","9♣","10♣","J♣","Q♣","K♣", "A♦","2♦","3♦","4♦","5♦","6♦","7♦","8♦","9♦","10♦","J♦","Q♦","K♦", "A♠","2♠","3♠","4♠","5♠","6♠","7♠","8♠","9♠","10♠","J♠","Q♠","K♠", "A♥","2♥","3♥","4♥","5♥","6♥","7♥","8♥","9♥","10♥","J♥","Q♥","K♥"]
         this.playerDeck = []
         this.cpuDeck = []
         this.playerHand = ""
         this.cpuHand = ""
         this.monte = []
+        this.name = ""
     }
 
     startingGame () {
@@ -71,8 +72,18 @@ class Game {
             this.cpuHand = []
             this.playerHand = []
             return
-    }
+        }
 
+        // if (this.playerDeck.length >= 45) {
+        //     console.log (`GO ON ${this.name}, THE VICTORY IS AT SIGN!!!`)
+        //     return
+        // }
+
+        // if (this.cpuDeck.length >= 45) {
+        //     console.log(`YOU ARE AT MY MERCY! MUAHAHAHAHA`)
+        //     return
+        // }
+        
 
     }
 }

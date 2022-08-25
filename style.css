@@ -3,7 +3,7 @@
 
 body {
     margin: 0;
-    background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+    background-image: linear-gradient(to top, #a665d8 0%, #f6f3ff 100%);
     overflow-y: hidden;
 }
 
@@ -19,6 +19,7 @@ body {
     position: relative;
     box-shadow: 1px 2px 60px rgb(0,0,0,4); 
     margin: 5rem auto;
+    overflow-x: hidden;
 }
 
 .label {
@@ -31,6 +32,8 @@ body {
     margin: 2rem;
     padding: 1rem;
     outline-offset: 0.5rem;
+    animation: reflex 1s ease-in-out forwards infinite alternate-reverse;
+    
 }
 
 .enter {
@@ -39,9 +42,16 @@ body {
     padding: 1rem 3rem;
     border-radius: 35px;
     font-size: 1rem;
+    font-weight: 400;
     background: #997070;
     box-shadow: inset 30px 30px 26px #674b4b,
                 inset -30px -30px 26px #cb9595;
+}
+
+.play-button {
+    border-radius: 100px;
+    background: #997070;
+    
 }
 
 .show {
@@ -54,4 +64,69 @@ body {
 
 #hidden {
     display: none;
+}
+
+
+@keyframes reflex {
+    100%{
+
+        background-color: rgba(219, 75, 75, 0.404);
+        transform: translateX(-10%);
+    }
+
+    66%{
+
+        transform: translateY(1%);
+    }
+
+    50%{
+
+        transform: translateX(5%);
+    }
+
+    33%{
+
+        transform: translateY(-1%);
+    }
+
+    0%{
+        transform: translateX(10%);
+    }
+}
+
+
+#container2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 80vh;
+    width: 70vw;
+    position: relative;
+    background: url('./images.css/neon-light-arrow-direction-perspective_1017-22033.webp');
+    background-size: cover;
+    box-shadow: 1px 2px 60px rgb(0,0,0,4); 
+    margin: 5rem auto;
+    overflow-x: hidden;
+}
+
+.computer-tug {
+    border: 0.5rem outset rgb(146, 240, 219);
+    outline: 0.5rem solid rgba(240, 97, 204, 0.856);
+    border-radius: 12px;
+    font-family: 'Aboreto', cursive;
+    font-size: 3rem;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+}
+
+.player-tug {
+    border: 0.5rem outset rgb(6, 139, 39);
+    box-shadow: 0 0 0 0.5rem rgba(13, 113, 126, 0.829);
+    border-radius: 12px;
+    font-family: 'Aboreto', cursive;
+    font-size: 3rem;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
 }
