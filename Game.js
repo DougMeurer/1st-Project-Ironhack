@@ -6,7 +6,9 @@ class Game {
         this.playerHand = ""
         this.cpuHand = ""
         this.monte = []
-        this.name = ""
+        this.pointsLeft = 50
+        this.pointsRight = 50
+        this.log = ""
     }
 
     startingGame () {
@@ -16,6 +18,7 @@ class Game {
 
         this.cpuDeck = deckRandom.slice(0, 26)
         this.playerDeck = deckRandom.slice(25, 51)
+
         
         console.log(this.cpuDeck)
         console.log(this.playerDeck)
@@ -25,16 +28,7 @@ class Game {
         this.playerHand = this.playerDeck.shift()
         this.cpuHand = this.cpuDeck.shift()
 
-            console.log("cpu", this.cpuHand)
-            console.log("player", this.playerHand)
-        
-        
-        //fazer a excessao do A aqui
-
-
-        //cartas iguais 
         if (this.cpuHand.charAt(0) == this.playerHand.charAt(0)) {
-            console.log("cartas iguais")
             this.monte.push(this.cpuHand, this.playerHand)  
             this.cpuHand = []
             this.playerHand = []
@@ -42,13 +36,28 @@ class Game {
             return
         }
 
-        // carta cpu maior 
         if (this.cpuHand.charAt(0) > this.playerHand.charAt(0)) {
-            console.log("cpu ganhou")
 
             this.cpuDeck.push(this.playerHand, this.cpuHand)
-            
 
+                if (this.cpuDeck < 0) {
+                    return
+                }
+
+            let rightR = document.querySelector('.playTug')
+            let leftL = document.querySelector('.compTug')
+
+            this.pointsRight += 5
+            this.pointsLeft -= 5
+
+            rightR.style.setProperty("--width-right", `${this.pointsRight}vw`)
+            leftL.style.setProperty("--width-left", `${this.pointsLeft}vw`)
+
+            if (this.pointsRight === 100) {
+                this.log = "NOT THIS TIME WARRIOR!"
+               
+            }
+            
             if(this.monte.length) {
                 this.cpuDeck.push(...this.monte)
                 this.monte = []
@@ -59,31 +68,38 @@ class Game {
 
             return
         } 
-        // carta player maior
+
         if (this.cpuHand.charAt(0) < this.playerHand.charAt(0)) {
-            console.log("player ganhou")
 
             this.playerDeck.push(this.cpuHand, this.playerHand)
+
+                if (this.playerDeck < 0) {
+                    return
+                }
+
+            let rightR = document.querySelector('.playTug')
+            let leftL = document.querySelector('.compTug')
+ 
+
+            this.pointsRight -= 5
+            this.pointsLeft += 5
+
+            leftL.style.setProperty("--width-left", `${this.pointsLeft}vw`)
+            rightR.style.setProperty("--width-right", `${this.pointsRight}vw`)
          
+            if (this.pointsLeft === 100) {
+                this.log = "CONGRATS WARRIOR! YOU'RE THE WINNER!!!!"
+                
+            }
+
             if(this.monte.length) {
                 this.playerDeck.push(...this.monte)
                 this.monte = []
             }
+
             this.cpuHand = []
             this.playerHand = []
             return
         }
-
-        // if (this.playerDeck.length >= 45) {
-        //     console.log (`GO ON ${this.name}, THE VICTORY IS AT SIGN!!!`)
-        //     return
-        // }
-
-        // if (this.cpuDeck.length >= 45) {
-        //     console.log(`YOU ARE AT MY MERCY! MUAHAHAHAHA`)
-        //     return
-        // }
-        
-
     }
 }
