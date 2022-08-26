@@ -1,8 +1,8 @@
-#  Tug of War  - Reload!  
+# Tug of War - Reload!
 
 ​
 
-##  Introduction
+## Introduction
 
 ​
 
@@ -14,19 +14,17 @@ Intended to catch the 'click' frenetics in an underground/alt action.
 
 ​
 
-##  Game  Description
-
+## Game Description
 
 Tug of war is a classic since ancient times to incite competitiviness of groups over a friendly envirolment.
 
-To win the game you must bring the opponest as close to you as possible. 
+To win the game you must bring the opponest as close to you as possible.
 
-
-####  Tug On Warrior!  
+#### Tug On Warrior!
 
 ​
 
-##  Built  With
+## Built With
 
 ​
 
@@ -34,11 +32,11 @@ To win the game you must bring the opponest as close to you as possible.
 
 ​
 
-##  Link  Access
+## Link Access
 
 ​
 
-[Link  of  the  game](https://dougmeurer.github.io/1st-Project-Ironhack/)
+[Link of the game](https://dougmeurer.github.io/1st-Project-Ironhack/)
 
 ​
 Thank you!
