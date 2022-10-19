@@ -19,9 +19,6 @@ class Game {
         this.cpuDeck = deckRandom.slice(0, 26)
         this.playerDeck = deckRandom.slice(25, 51)
 
-        
-        console.log(this.cpuDeck)
-        console.log(this.playerDeck)
     }
 
     flip () {

@@ -10,14 +10,11 @@ const gameShow = document.querySelector('#container2')
 newGame.startingGame()
 
 bntStart.addEventListener('click', () => {
-
-    console.log(gameShow)
     start.style.display = "none";
     gameShow.style.display = "flex";
 })
 
 playBtn.addEventListener('click', () => {     
-
     const btnSound = new Audio('./Music/soundeffect.mp3')
     btnSound.volume = 0.3
     btnSound.play()
@@ -25,14 +22,11 @@ playBtn.addEventListener('click', () => {
         newGame.flip()
 
         log.innerText = newGame.log
-        
-        console.log(newGame.pointsRight)
-        console.log(newGame.pointsLeft)
 
         if (newGame.pointsLeft === 100) {
             war.innerHTML = `
             <form>
-        <button> PLAY AGAIN!  </button> </form>
+            <button> PLAY AGAIN!  </button> </form>
 
             `
             playBtn.style.display = "none"
