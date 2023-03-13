@@ -36,7 +36,7 @@ To win the game you must bring the opponest as close to you as possible.
 
 ​
 
-[Link of the game](https://dougmeurer.github.io/1st-Project-Ironhack/)
+[Link of the game](https://dougmeurer.github.io/TugOfWar-TheGame/)
 
 ​
 Thank you!
